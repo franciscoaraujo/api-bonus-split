@@ -22,18 +22,13 @@ public class CalculoVendas implements CalculoRemuneracaoStrategy<Venda> {
 
     @Override
     public BigDecimal calcularRemuneracao(Venda... criteriosParam) {
-
         log.info("Iniciando o calculo sobre as Vendas...");
-
         VariavelDeCalculoRepository variavelDeCalculoRepository = new VariavelDeCalculoRepository();
-
         List<VariavelDeCalculo> variavelDeCalculoStream = variavelDeCalculoRepository
                 .getVariavelCalculoVendas()
                 .stream().filter(x -> x.getCriterioCalculo().equals(CriterioCalculo.VENDAS_REALIZADAS))
                 .collect(Collectors.toList());
-
         LocalDateTime dataVenda = criteriosParam[0].getDataVenda();
-
         BigDecimal baseCalculo = variavelDeCalculoStream.stream().map(VariavelDeCalculo::getValorBaseCriterio).findFirst().get();
         BigDecimal bonusPorMilVendas = variavelDeCalculoStream.stream().map(VariavelDeCalculo::getValorOffSet).findFirst().get();
         BigDecimal valorVenda = criteriosParam[0].getValorVenda().setScale(2, RoundingMode.HALF_EVEN);

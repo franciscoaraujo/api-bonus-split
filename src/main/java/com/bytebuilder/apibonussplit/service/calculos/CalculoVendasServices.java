@@ -15,7 +15,7 @@ public class CalculoVendasServices {
 
     public Remuneracao getCalculosRemuneracaoVenda(VendaDto vendaDto) {
         CalculoVendas calculoVendas = new CalculoVendas();
-       Venda vendaModel =  VendaDto.toModel(vendaDto);
+        Venda vendaModel = VendaDto.toModel(vendaDto);
         BigDecimal valorCalculado = calculoVendas.calcularRemuneracao(vendaModel);
         Remuneracao remuneracao = new Remuneracao();
         remuneracao.setValorApagar(valorCalculado);
