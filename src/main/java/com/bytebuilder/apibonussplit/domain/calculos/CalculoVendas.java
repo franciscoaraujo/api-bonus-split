@@ -26,6 +26,7 @@ public class CalculoVendas implements CalculoRemuneracaoStrategy<Venda> {
         log.info("Iniciando o calculo sobre as Vendas...");
 
         VariavelDeCalculoRepository variavelDeCalculoRepository = new VariavelDeCalculoRepository();
+
         List<VariavelDeCalculo> variavelDeCalculoStream = variavelDeCalculoRepository
                 .getVariavelCalculoVendas()
                 .stream().filter(x -> x.getCriterioCalculo().equals(CriterioCalculo.VENDAS_REALIZADAS))
@@ -34,7 +35,7 @@ public class CalculoVendas implements CalculoRemuneracaoStrategy<Venda> {
         LocalDateTime dataVenda = criteriosParam[0].getDataVenda();
 
         BigDecimal baseCalculo = variavelDeCalculoStream.stream().map(VariavelDeCalculo::getValorBaseCriterio).findFirst().get();
-        BigDecimal bonusPorMilVendas = variavelDeCalculoStream.stream().map(VariavelDeCalculo::getValorBonus).findFirst().get();
+        BigDecimal bonusPorMilVendas = variavelDeCalculoStream.stream().map(VariavelDeCalculo::getValorOffSet).findFirst().get();
         BigDecimal valorVenda = criteriosParam[0].getValorVenda().setScale(2, RoundingMode.HALF_EVEN);
         BigDecimal resultadoCalculo = valorVenda.divide(baseCalculo).multiply(bonusPorMilVendas).setScale(2, RoundingMode.HALF_EVEN);
 

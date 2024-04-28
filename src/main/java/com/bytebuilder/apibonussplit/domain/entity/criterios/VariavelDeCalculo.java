@@ -10,6 +10,6 @@ import java.time.LocalDateTime;
 public class VariavelDeCalculo {
     private CriterioCalculo criterioCalculo;
     private BigDecimal valorBaseCriterio;
-    private BigDecimal valorBonus;
+    private BigDecimal valorOffSet;
     private LocalDateTime dtCriacao = LocalDateTime.now();
 }
