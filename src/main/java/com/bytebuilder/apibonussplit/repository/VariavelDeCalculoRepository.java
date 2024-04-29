@@ -25,10 +25,9 @@ public class VariavelDeCalculoRepository {
         return listCriterioVariavelDeCalculo;
     }
 
-    // Supondo que para cada 1% acima da meta, o funcionário recebe um bônus de R$ 10,00
-    // e para cada 1% abaixo da meta, o funcionário tem um desconto de R$ 5,00
+    // Supondo que para cada 1% acima da meta, o funcionário recebe um bônus de R$ 8,80
     public List<CriterioVariavelDeCalculo> getVariavelCalculoMetas() {
-        BigDecimal bonusPorExcessoMeta = new BigDecimal(10.00);
+        BigDecimal bonusPorExcessoMeta = new BigDecimal(8.89);
         BigDecimal descontoPorAbaixoMeta = new BigDecimal(5.00);
 
         CriterioVariavelDeCalculo criterioVariavelDeCalculoVenda = new CriterioVariavelDeCalculo();

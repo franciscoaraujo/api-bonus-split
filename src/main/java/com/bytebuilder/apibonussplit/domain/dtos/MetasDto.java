@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 
 @Data
 public class MetasDto {
-    private Funcionario funcionario;
-    private LocalDateTime dtMetaAlcancada = LocalDateTime.now();
+    private Integer numeroMatricula;
     private BigDecimal percentual;
 }

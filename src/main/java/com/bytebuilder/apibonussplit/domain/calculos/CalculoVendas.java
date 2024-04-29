@@ -39,7 +39,6 @@ public class CalculoVendas implements CalculoRemuneracaoStrategy<VendaDto> {
         log.info("VALOR BASE DE CALCULO: {},00", baseCalculo);
         log.info("VALOR BONUS POR MIL VANDAS: {},00", bonusPorMilVendas);
         log.info("VALOR DA VENDA REALIZADA: {}", valorVenda);
-       // log.info("DATA DA VENDA REALIZADA: {}", dataVenda.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         log.info("VALOR Á RECEBER: {}", resultadoCalculo.setScale(2, RoundingMode.HALF_EVEN));
         log.info("--------------------------------------------------");
 
