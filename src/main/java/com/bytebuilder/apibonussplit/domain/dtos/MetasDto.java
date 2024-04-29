@@ -1,4 +1,4 @@
-package com.bytebuilder.apibonussplit.domain.entity.criterios;
+package com.bytebuilder.apibonussplit.domain.dtos;
 
 import com.bytebuilder.apibonussplit.domain.entity.Funcionario;
 import lombok.Data;
@@ -8,9 +8,8 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class Lucratividade {
+public class MetasDto {
     private Funcionario funcionario;
-    private LocalDateTime dtCadastro;
-    private BigDecimal lucroLiquidoEmpresa;
-
+    private LocalDateTime dtMetaAlcancada = LocalDateTime.now();
+    private BigDecimal percentual;
 }

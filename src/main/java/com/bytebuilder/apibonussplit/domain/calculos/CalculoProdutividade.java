@@ -1,15 +1,14 @@
 package com.bytebuilder.apibonussplit.domain.calculos;
 
-import com.bytebuilder.apibonussplit.domain.calculos.CalculoRemuneracaoStrategy;
-import com.bytebuilder.apibonussplit.domain.entity.criterios.Produtividade;
+import com.bytebuilder.apibonussplit.domain.dtos.ProdutividadeDto;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-public class CalculoProdutividade implements CalculoRemuneracaoStrategy<Produtividade> {
+public class CalculoProdutividade implements CalculoRemuneracaoStrategy<ProdutividadeDto> {
     @Override
-    public BigDecimal calcularRemuneracao(Produtividade... criteriosParam) {
+    public BigDecimal calcularRemuneracao(ProdutividadeDto... criteriosParam) {
         return null;
     }
 }
